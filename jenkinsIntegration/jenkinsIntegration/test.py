@@ -14,7 +14,7 @@ class BasicTestCase(TestCase):
         self.assertEqual(5 * 2, 4)
 
     def test_upper(self):
-        self.assertEqual("nishant",upper(), "NISHANT")
+        self.assertEqual("nishant".upper(), "NISHANT")
 
 if __name__ == '__main__':
     with open('/results.xml', 'wb') as output:
