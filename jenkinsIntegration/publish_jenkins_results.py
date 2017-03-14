@@ -28,6 +28,7 @@ def publish_results():
     # print ">>>>build=%s" % args.build
 
     job = J[args.job]
+    print(args.build)
     build = job.get_build(int(args.build))
 
     output = {}
@@ -95,7 +96,8 @@ def publish_results():
     #
     print("Sending results to ServiceNow")
     url = SNC_URL + "/api/snc/jenkinsimport/results"
-    requests.post(url=url, data=_json, auth=HTTPBasicAuth(SNC_USER, SNC_PASS))
+    headers = {'Authorization': 'Basic', 'Accept': 'application/json', 'Content-Type': 'application/json'}
+    requests.post(url=url, data=_json, headers=headers auth=HTTPBasicAuth(SNC_USER, SNC_PASS))
 
 if '__main__' == __name__:
     publish_results()
