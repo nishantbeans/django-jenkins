@@ -13,7 +13,7 @@ class BasicTestCase(TestCase):
     def test_mul(self):
         self.assertEqual(5 * 2, 4)
 
-def test_upper(self):
+    def test_upper(self):
         self.assertEqual("nishant",upper(), "NISHANT")
 
 if __name__ == '__main__':
